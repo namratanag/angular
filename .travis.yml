@@ -3,10 +3,8 @@ sudo: required
 node_js:
      - node
 addons:
-  sauce_connect: 
-    username:"namratanag"
-    access_key:"7521340a-5345-45bc-ac80-0d4ffd7546ff"
-
+  sauce_connect: true
+  
 before-script:
      - npm install -g silent angular-cli
 script:
