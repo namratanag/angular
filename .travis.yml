@@ -4,9 +4,11 @@ node_js:
      - node
 addons:
   sauce_connect: true
+  sonarcloud: true
   
 before-script:
      - npm install -g silent angular-cli
 script:
-     -  ng build --prod
+     - ng build --prod
+     - sonar-scanner 
 
