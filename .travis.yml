@@ -1,8 +1,21 @@
 language: node_js
+sudo: required
 node_js:
      - node
-  
-before_script:
+addons:
+  sauce_connect: 
+    username:"namratanag"
+    access_key:"7521340a-5345-45bc-ac80-0d4ffd7546ff"
+  firefox: latest
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+before-script:
+     - npm install web-component-tester
      - npm install -g silent angular-cli
 script:
-     - ng build --prod
+  - xvfb-run npm --skip-plugin sauce
+  - if ["${TRAVIS_PULL_REQUEST}"="false"]; then wct --skip-plugin local;fi
