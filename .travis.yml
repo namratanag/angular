@@ -10,5 +10,5 @@ before-script:
      - npm install -g silent angular-cli
 script:
      - ng build --prod
-     - sonar-scanner 
+    
 
