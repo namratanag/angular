@@ -1,22 +1,22 @@
-language: node_js
+dist:trusty
 sudo: required
+language: node_js
+
 node_js:
      - node
 addons:
-
-  firefox: latest
-  apt:
-    sources:
-      - google-chrome
-    packages:
-      - google-chrome-stable
   sauce_connect: true
-  sonarcloud: true
+  sonarcloud: 
+      organization: "namratanag-github"
+    token:
+      secure: $SONAR_TOKEN
+jdk:
+  - oraclejdk8
   
 before-script:
      - npm install -g silent angular-cli
 script:
      - ng build --prod
-     - xvfb-run npm test
+     - sonar-scanner
     
 

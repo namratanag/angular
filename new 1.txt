@@ -1,7 +1,0 @@
- 33fac4bcb1513621fea72abfc9484642578f7d9f-----sonar cloud
-     sauce lab----7521340a-5345-45bc-ac80-0d4ffd7546ff
-     
-     heroku==--  2c2d9c1f-bf16-46eb-b582-e1d3c4527191
-     
-     
-     ORGANIZATION KEY---namratanag-github
