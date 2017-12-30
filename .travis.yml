@@ -4,7 +4,8 @@ node_js:
 dist: trusty
 sudo: required
 addons:
-  sonarcloud: 
+  sauce_connect:true
+  sonarcloud:  
       organization: "namratanag-github"
       token: $SONAR_TOKEN
 jdk:
@@ -14,5 +15,9 @@ before-script:
 script:
      - ng build --prod
      - sonar-scanner
+     - xvfb-run wct
+     - if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then wct -s 'default'; fi
     
 
+
+   
