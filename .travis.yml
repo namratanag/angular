@@ -1,9 +1,8 @@
 language: node_js
 node_js:
      - node
-dist:trusty
+dist: trusty
 sudo: required
-
 addons:
   sonarcloud: 
       organization: "namratanag-github"
@@ -11,7 +10,6 @@ addons:
       secure: $SONAR_TOKEN
 jdk:
   - oraclejdk8
-  
 before-script:
      - npm install -g silent angular-cli
 script:
